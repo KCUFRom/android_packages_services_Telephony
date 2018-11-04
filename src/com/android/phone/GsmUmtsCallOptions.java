@@ -62,6 +62,18 @@ public class GsmUmtsCallOptions extends PreferenceActivity {
     }
 
     public static void init(PreferenceScreen prefScreen, SubscriptionInfoHelper subInfoHelper) {
+<<<<<<< HEAD
+=======
+        Preference callForwardingPref = prefScreen.findPreference(CALL_FORWARDING_KEY);
+        callForwardingPref.setIntent(subInfoHelper.getIntent(CallForwardType.class));
+
+        Preference additionalGsmSettingsPref =
+                prefScreen.findPreference(ADDITIONAL_GSM_SETTINGS_KEY);
+        additionalGsmSettingsPref.setIntent(
+                subInfoHelper.getIntent(GsmUmtsAdditionalCallOptions.class));
+
+        Preference callBarringPref = prefScreen.findPreference(CALL_BARRING_KEY);
+>>>>>>> 7d082c38ceb32927fe0eddda0b1370cc903dc781
         PersistableBundle b = null;
         if (subInfoHelper.hasSubId()) {
             b = PhoneGlobals.getInstance().getCarrierConfigForSubId(subInfoHelper.getSubId());
